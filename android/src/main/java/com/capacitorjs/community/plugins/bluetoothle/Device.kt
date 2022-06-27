@@ -354,10 +354,7 @@ class Device(
             reject(key, "Characteristic not found.")
             return
         }
-        if (value == "") {
-            reject(key, "Invalid data.")
-            return
-        }
+       
         val bytes = stringToBytes(value)
         characteristic.value = bytes
         characteristic.writeType = writeType
@@ -468,10 +465,7 @@ class Device(
             reject(key, "Descriptor not found.")
             return
         }
-        if (value == "") {
-            reject(key, "Invalid data.")
-            return
-        }
+      
         val bytes = stringToBytes(value)
         descriptor.value = bytes
         val result = bluetoothGatt?.writeDescriptor(descriptor)
